@@ -8,19 +8,59 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
     :root { --pp-accent:#0d6efd; }
-    .hero { padding: 5rem 0 3rem; }
+    .hero { padding: 2.5rem 0 3rem; }
     .pp-divider { height: 2px; width: 80px; background: var(--pp-accent); margin: 1rem auto 2rem; opacity:.3; }
     .pp-card:hover { transform: translateY(-4px); transition: .2s; }
-    .navbar-brand img { object-fit: cover; }
     footer { padding: 2rem 0; }
+
+    /* Profile picture */
+    .profile-pic {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .profile-pic img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Logo */
+    .logo-img img {
+      height: 120px;
+      width: auto;
+      display: block;
+    }
+
+    /* General page look */
+    body {
+      background: #f8fafc;
+      font-size: 18px;
+      line-height: 1.7;
+    }
+    .page-wrapper {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 2.5rem;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+    }
+    .hero + #about {
+  margin-top: -1rem; /* pulls About up closer to the divider */
+}
   </style>
 </head>
 <body>
+
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg bg-light shadow-sm">
     <div class="container">
-      <a class="navbar-brand d-flex align-items-center gap-2" href="#">
-        <img src="logo.png" alt="Logo" width="40" height="40" class="rounded">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
         <span>Positive Possibilities</span>
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
@@ -28,7 +68,8 @@
       </button>
       <div id="nav" class="collapse navbar-collapse">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="About.html">About</a></li>
           <li class="nav-item"><a class="nav-link" href="#help">Help With</a></li>
           <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
         </ul>
@@ -36,137 +77,110 @@
     </div>
   </nav>
 
-  <!-- Hero -->
-  <header class="hero text-center container">
-    <img src="me.jpg" alt="Your photo" class="rounded-circle shadow" width="200" height="200">
-    <h1 class="mt-4">Hello, I’m a Cognitive Hypnotherapist</h1>
-    <p class="lead mb-3">Gentle, practical support to help you move forward — one positive step at a time.</p>
-    <a href="#help" class="btn btn-primary">See how I can help</a>
-    <div class="pp-divider"></div>
-  </header>
+  <div class="page-wrapper">
 
-  <!-- About -->
-  <section id="about" class="container py-5">
-    <div class="row justify-content-center">
-      <div class="col-lg-8">
-        <h2 class="text-center">About</h2>
-        <p class="mt-3">
-          Welcome — I’m Nadia Bhim, and I work with people who want calm, clarity, and confidence.
-          Together, with Hypnotherapy, I can help you to find simple ways to reduce stress, build helpful habits, and reconnect
-          with your strengths. I offer practical tools, warm accountability, and space to breathe.
+    <!-- Hero -->
+    <header class="hero text-center container">
+      <div class="d-flex justify-content-center align-items-center gap-4 flex-wrap">
+        <!-- Logo -->
+        <div class="logo-img">
+          <img src="logo.png" alt="Positive Possibilities Logo">
+        </div>
+        <!-- Profile picture -->
+        <div class="profile-pic">
+          <img src="profile_thumbnail.png" alt="Portrait of Nadia Bhim">
+        </div>
+      </div>
+
+      <h3 class="mt-4">Hello, I’m Nadia, a Cognitive Hypnotherapist</h3>
+      <p class="lead mb-3">Gentle, practical support to help you move forward — one positive step at a time.</p>
+      <a href="#help" class="btn btn-primary">See how I can help</a>
+    
+    </header>
+
+    <!-- About -->
+    <section id="about" class="container pt-1 pb-0">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+         
+          <p>
+            Welcome — I’m Nadia Bhim, and I work with people who want calm, clarity, and confidence.
+            Together, with Hypnotherapy, I can help you to find simple ways to reduce stress, build helpful habits, and reconnect
+            with your strengths. I offer practical tools, warm accountability, and space to breathe.
+          </p>
+          <p>
+            Whether you’re easing anxiety, preparing for a big change, or just want
+            a steadier daily rhythm, we’ll keep it doable and kind.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Help With -->
+    <section id="help" class="bg-light py-5">
+      <div class="container">
+        <h2 class="text-center">Help With</h2>
+        <p class="text-center text-muted mb-4">Pick what you need today — we can tailor any option. Cognitive Hypnotherapy can be used in different scenarios.</p>
+        <div class="row g-4">
+          <!-- Cards -->
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100 shadow-sm pp-card">
+              <div class="card-body">
+                <h5 class="card-title">Anxiety & Calm</h5>
+                <p class="card-text">Learn quick grounding techniques, calmer thoughts, and how to relax.</p>
+                <a href="#contact" class="btn btn-outline-primary btn-sm">Enquire</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100 shadow-sm pp-card">
+              <div class="card-body">
+                <h5 class="card-title">Phobias</h5>
+                <p class="card-text">Through calmness and a few sessions to dispel fears.</p>
+                <a href="#contact" class="btn btn-outline-primary btn-sm">Enquire</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100 shadow-sm pp-card">
+              <div class="card-body">
+                <h5 class="card-title">Sleep & Stress Reset</h5>
+                <p class="card-text">Help to fall asleep easier, and feel more balanced.</p>
+                <a href="#contact" class="btn btn-outline-primary btn-sm">Enquire</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100 shadow-sm pp-card">
+              <div class="card-body">
+                <h5 class="card-title">Habits & Motivation</h5>
+                <p class="card-text">Healthy outcomes</p>
+                <a href="#contact" class="btn btn-outline-primary btn-sm">Enquire</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100 shadow-sm pp-card">
+              <div class="card-body">
+                <h5 class="card-title">Mindset & Self-Talk</h5>
+                <p class="card-text">Reframe unhelpful thoughts and practice kinder inner language that supports change.</p>
+                <a href="#contact" class="btn btn-outline-primary btn-sm">Enquire</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="text-center text-muted mt-4 mb-0">
+          Prefer something else? <a href="#contact">Tell me what you need</a> and we’ll shape a plan.
         </p>
-        <p>
-          Whether you’re easing anxiety, preparing for a big change, or just want
-          a steadier daily rhythm, we’ll keep it doable and kind.
-        </p>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Help With -->
-  <section id="help" class="bg-light py-5">
-    <div class="container">
-      <h2 class="text-center">Help With</h2>
-      <p class="text-center text-muted mb-4">Pick what you need today — we can tailor any option. Cognitive Hypnotherapy can be used in different scenarios.</p>
-      <div class="row g-4">
-        <!-- Card 1 -->
-        <div class="col-md-6 col-lg-4">
-          <div class="card h-100 shadow-sm pp-card">
+    <!-- Contact -->
+    <section id="contact" class="container py-5">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <h2 class="text-center">Contact</h2>
+          <p class="text-center text-muted">Quickest way: email me and I’ll reply as soon as I can</p>
+          <div class="card shadow-sm">
             <div class="card-body">
-              <h5 class="card-title">Anxiety & Calm</h5>
-              <p class="card-text">Learn quick grounding techniques, calmer thoughts, and how to relax.</p>
-              <a href="#contact" class="btn btn-outline-primary btn-sm">Enquire</a>
-            </div>
-          </div>
-        </div>
-        <!-- Card 2 -->
-        <div class="col-md-6 col-lg-4">
-          <div class="card h-100 shadow-sm pp-card">
-            <div class="card-body">
-              <h5 class="card-title">Phobias</h5>
-              <p class="card-text">Through calmness and a few sessions to dispel fears.</p>
-              <a href="#contact" class="btn btn-outline-primary btn-sm">Enquire</a>
-            </div>
-          </div>
-        </div>
-        <!-- Card 3 -->
-        <div class="col-md-6 col-lg-4">
-          <div class="card h-100 shadow-sm pp-card">
-            <div class="card-body">
-              <h5 class="card-title">Sleep & Stress Reset</h5>
-              <p class="card-text">Help to fall asleep easier, and feel more balanced.</p>
-              <a href="#contact" class="btn btn-outline-primary btn-sm">Enquire</a>
-            </div>
-          </div>
-        </div>
-        <!-- Card 4 -->
-        <div class="col-md-6 col-lg-4">
-          <div class="card h-100 shadow-sm pp-card">
-            <div class="card-body">
-              <h5 class="card-title">Habits & Motivation</h5>
-              <p class="card-text">Healthy outcomes</p>
-              <a href="#contact" class="btn btn-outline-primary btn-sm">Enquire</a>
-            </div>
-          </div>
-        </div>
-        <!-- Card 5 -->
-        <div class="col-md-6 col-lg-4">
-          <div class="card h-100 shadow-sm pp-card">
-            <div class="card-body">
-              <h5 class="card-title">Mindset & Self-Talk</h5>
-              <p class="card-text">Reframe unhelpful thoughts and practice kinder inner language that supports change.</p>
-              <a href="#contact" class="btn btn-outline-primary btn-sm">Enquire</a>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Small note -->
-      <p class="text-center text-muted mt-4 mb-0">
-        Prefer something else? <a href="#contact">Tell me what you need</a> and we’ll shape a plan.
-      </p>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact" class="container py-5">
-    <div class="row justify-content-center">
-      <div class="col-lg-8">
-        <h2 class="text-center">Contact</h2>
-        <p class="text-center text-muted">Quickest way: email me and I’ll reply as soon as I can</p>
-
-        <!-- Simple contact block for GitHub Pages -->
-        <div class="card shadow-sm">
-          <div class="card-body">
-            <p class="mb-1"><strong>Email</strong></p>
-            <p><a href="mailto:hello@positive-possibilities.co.uk">hello@positive-possibilities.co.uk</a></p>
-
-            <p class="mb-1"><strong>Based in</strong></p>
-            <p>Sutton, Greater London (online and local)</p>
-
-            <a href="mailto:hello@positive-possibilities.co.uk?subject=Enquiry%20from%20website" class="btn btn-primary">
-              Email me
-            </a>
-            <p class="text-muted small mt-3 mb-0">
-              Want a form instead of email? Use Formspree or Netlify Forms later — easy to plug in on GitHub Pages.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <footer class="text-center text-muted">
-    <div class="container">
-      <small>© <span id="year"></span> Positive Possibilities · All rights reserved</small>
-    </div>
-  </footer>
-
-  <script>
-    // current year in footer
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+              <p class="mb-1"><strong>Email</strong></p>
