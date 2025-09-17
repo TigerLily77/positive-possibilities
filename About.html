@@ -94,18 +94,30 @@
       background: #f0f9ff; 
       color: var(--accent); 
     }
+.image-text-container {
+  position: relative;
+}
+
+.image-text-container::after {
+  content: "";
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 40%;
+  background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+}
 
     footer { 
       padding: 20px; 
       border-top: 1px solid #e2e8f0; 
       font-size: 13px; 
       color: var(--muted); 
-      text-align: center;
+      text-align: left;
     }
     footer img {
       display: block;
       margin: 0 auto 10px;
       max-width: 140px;
+      
     }
 
     @media (max-width: 760px) {
@@ -162,7 +174,7 @@
             <h3>Quick facts</h3>
             <a href="#"><span>Based in</span><span>Sutton, London, UK</span></a>
             <a href="#"><span>Focus</span><span>Anxiety, Confidence, Phobias</span></a>
-            <a href="#"><span>Fully insured and a member of the NCH</span></a>
+            <a href="#"><span>I am fully insured and in practice with the NCH code of ethics.</span></a>
           </div>
 
           <div class="list" style="margin-top:20px;">
