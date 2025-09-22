@@ -25,19 +25,26 @@
       color: var(--text);
       line-height: 1.6;
     }
-    .wrap { 
-      min-height: 100svh; 
-      display: grid; 
-      place-items: center; 
-      padding: 40px 20px; 
-    }
-    .card {
-      width: min(880px, 100%);
-      background: var(--card);
-      border-radius: var(--radius);
-      box-shadow: 0 8px 28px rgba(15, 23, 42, 0.08);
-      overflow: hidden;
-    }
+  .wrap {
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  padding: 18px; /* lighter padding so card has room */
+}
+
+   .card {
+  max-width: 880px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;       /* ensures inner text never touches edges */
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: 0 8px 28px rgba(15, 23, 42, 0.08);
+  overflow: hidden;
+  overflow-wrap: break-word;
+  box-sizing: border-box; /* makes sure padding is included in width */
+}
+
     .hero {
       background: linear-gradient(90deg, #f9fafb, #f0faff);
       padding: clamp(24px, 5vw, 48px);
@@ -64,8 +71,12 @@
       grid-template-columns: 2fr 1fr;
       gap: 30px;
       padding: clamp(24px, 5vw, 48px);
+      overflow-x: hidden;
     }
-
+    img {
+    max-width: 100%;
+     height: auto;
+    }
     .bio { font-size: 17px; color: #1e293b; }
     .bio p { margin: 0 0 18px; }
 
@@ -165,7 +176,7 @@
             <p>I trained at the Quest Institute, earning my Hypnotherapy Practitioner Diploma (HPD) in Cognitive Hypnotherapy, alongside Neuro-Linguistic Programming (NLP). This means I can draw on a flexible toolkit of approaches — from reframing thought patterns to powerful change techniques — to support each person in the way that works best for them.
               I also hold a degree in Psychology, which gives me a solid understanding of human behaviour and mental processes.</p>
             </p>
-          </div>gt
+          </div>
         </div>
 
         <aside>
